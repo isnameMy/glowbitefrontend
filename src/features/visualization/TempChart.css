@@ -1,0 +1,23 @@
+.temp-chart {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  height: 100%;
+}
+
+.temp-chart__header {
+  margin-bottom: 16px;
+}
+
+.temp-chart__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.temp-chart__container {
+  height: 320px;
+  width: 100%;
+}

@@ -1,0 +1,188 @@
+.stack-detail {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.stack-detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.stack-detail__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stack-detail__subtitle {
+  color: #64748b;
+  margin: 4px 0 0;
+}
+
+.stack-detail__back-link {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.stack-detail__back-link:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.badge--success {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.badge--warning {
+  background-color: #ffedd5;
+  color: #ea580c;
+}
+
+.badge--danger {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.real-ignition {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.real-ignition__label {
+  font-size: 14px;
+  color: #475569;
+}
+
+.real-ignition__value {
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.real-ignition__value--correct {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.real-ignition__value--error {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* Таблица */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table th {
+  font-weight: 600;
+  color: #475569;
+  background-color: #f8fafc;
+}
+
+.data-table tr:hover {
+  background-color: #f8fafc;
+}
+
+.temp--danger {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+.temp--warning {
+  color: #ea580c;
+  font-weight: bold;
+}
+
+.table-footer {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Метрики */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.metric {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.metric__value {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.metric__label {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.metric__note {
+  font-size: 12px;
+  color: #16a34a;
+  margin-top: 4px;
+}
+
+.metric--accuracy .metric__value { color: #16a34a; }
+.metric--error .metric__value { color: #64748b; }
+.metric--confidence .metric__value { color: #3b82f6; }
