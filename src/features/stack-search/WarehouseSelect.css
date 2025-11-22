@@ -15,7 +15,7 @@
 
 .warehouse-select__input {
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
   width: 553px;
   height: 69px;
