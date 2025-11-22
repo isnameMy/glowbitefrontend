@@ -96,10 +96,11 @@ export default function StackDetail() {
           ← Назад к выбору
         </a>
       </header>
-
+ 
       {/* Статус */}
-      <div className="card">
+      <div className="card-ye">
         <div className="status-row">
+
           {prediction ? (
             <span className={`badge ${
               prediction.daysLeft <= 0 ? 'badge--danger' :
@@ -111,7 +112,7 @@ export default function StackDetail() {
                 : `📅 Прогноз: ${formatDate(prediction.ignitionDate)} (${prediction.daysLeft} дн.)`}
             </span>
           ) : (
-            <span className="badge badge--success">✅ Нет риска</span>
+            <span className="badge--success">✅ Нет риска</span>
           )}
 
           {realIgnition && (
@@ -164,7 +165,7 @@ export default function StackDetail() {
 
       {/* Метрики */}
       {prediction && realIgnition && (
-        <div className="card">
+        <div className="card-prognoz">
           <h2 className="card__title">📊 Оценка прогноза</h2>
           <div className="metrics-grid">
             <div className="metric metric--accuracy">

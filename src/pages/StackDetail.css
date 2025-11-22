@@ -1,188 +1,243 @@
-.stack-detail {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 24px 16px;
+/* Полный сброс + базовые стили */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  color: #e0e0e0;
+  font-family: 'IBM Plex Mono', 'Consolas', monospace;
+  line-height: 1.6;
+  
+}
+
+/* Контейнер страницы */
+.stack-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: 100vh;
+  display: block; /* важно! */
+  
+}
+
+/* Хедер */
 .stack-detail__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #4444;
+  
 }
 
 .stack-detail__title {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 600;
   margin: 0;
+  color:#fff;
+  
 }
 
 .stack-detail__subtitle {
-  color: #64748b;
-  margin: 4px 0 0;
+  font-size: 16px;
+  color: #a0a0a0;
+  margin-top: 4px;
+  
 }
 
 .stack-detail__back-link {
-  color: #3b82f6;
+  color: #60a5fa;
   text-decoration: none;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 
 .stack-detail__back-link:hover {
-  text-decoration: underline;
+  background: rgba(96, 165, 250, 0.1);
+  transform: scale(1.13);
 }
 
+/* КАРТОЧКИ — главный фикс! */
 .card {
-  background: white;
+  background: #1e1e1e;
+  border: 2px solid #4444;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   padding: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 24px; /* ← это разделяет карточки */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: block;
+  width: 100%;
 }
+
+
 
 .card__title {
   font-size: 18px;
   font-weight: 600;
   margin: 0 0 16px;
+  color: white;
+  width: 1270px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
 }
 
-.status-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-}
 
-.badge {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.badge--success {
-  background-color: #dcfce7;
-  color: #16a34a;
-}
-
-.badge--warning {
-  background-color: #ffedd5;
-  color: #ea580c;
-}
-
-.badge--danger {
-  background-color: #fee2e2;
-  color: #dc2626;
-}
-
-.real-ignition {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.real-ignition__label {
-  font-size: 14px;
-  color: #475569;
-}
-
-.real-ignition__value {
-  font-size: 14px;
-  padding: 4px 8px;
-  border-radius: 12px;
-}
-
-.real-ignition__value--correct {
-  background-color: #dcfce7;
-  color: #16a34a;
-}
-
-.real-ignition__value--error {
-  background-color: #fee2e2;
-  color: #dc2626;
-}
-
-/* Таблица */
+/* === Красивая таблица === */
 .table-wrapper {
   overflow-x: auto;
+  margin: 0px;
+  border-radius: 8px;
+  overflow: hidden; /* скрывает углы при скролле */
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .data-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: 14px;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  margin-top: 30px;
 }
 
-.data-table th,
-.data-table td {
-  padding: 10px 12px;
-  text-align: left;
-  border-bottom: 1px solid #e2e8f0;
-}
-
+/* Заголовки */
 .data-table th {
+  background: #252525;
+  color: #cbd5e1;
   font-weight: 600;
-  color: #475569;
-  background-color: #f8fafc;
+  text-align: left;
+  padding: 14px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #444;
 }
 
-.data-table tr:hover {
-  background-color: #f8fafc;
+/* Ячейки */
+.data-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #333;
+  transition: background 0.2s;
+}
+
+/* Чётные строки — чуть темнее */
+.data-table tbody tr:nth-child(even) {
+  background: #1e1e1e;
+}
+
+/* Наведение на строку */
+.data-table tbody tr:hover {
+  background: #2a2a2a !important;
+}
+
+/* Цвета температур */
+.temp--warning {
+  color: #fbbf24;
+  font-weight: 600;
 }
 
 .temp--danger {
-  color: #dc2626;
-  font-weight: bold;
+  color: #f87171;
+  font-weight: 600;
 }
 
-.temp--warning {
-  color: #ea580c;
-  font-weight: bold;
+/* Адаптивность */
+@media (max-width: 600px) {
+  .data-table th,
+  .data-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
 }
 
-.table-footer {
-  margin-top: 12px;
-  font-size: 13px;
-  color: #64748b;
+.table-footer{
+  border: 1px solid #444;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  background: #252525;
+  color: #a0a0a0;
+  font-size: 10px;
+  margin-top: 10px;
 }
 
 /* Метрики */
 .metrics-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 16px;
-}
-
-@media (min-width: 768px) {
-  .metrics-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  margin-top: 16px;
 }
 
 .metric {
-  background-color: #f8fafc;
-  border-radius: 8px;
+  background: #252525;
   padding: 16px;
+  border-radius: 8px;
   text-align: center;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0px 4px 4px rgba(153.23, 133.17, 133.17, 0.25) inset;
 }
 
 .metric__value {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 4px;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+  /* box-shadow: 0px 4px 4px rgba(153.23, 133.17, 133.17, 0.25) inset; */
 }
+
 
 .metric__label {
-  font-size: 13px;
-  color: #64748b;
-}
-
-.metric__note {
   font-size: 12px;
-  color: #16a34a;
-  margin-top: 4px;
+  color: #a0a0a0;
+  /* box-shadow: 0px 4px 4px rgba(153.23, 133.17, 133.17, 0.25) inset; */
 }
 
-.metric--accuracy .metric__value { color: #16a34a; }
-.metric--error .metric__value { color: #64748b; }
-.metric--confidence .metric__value { color: #3b82f6; }
+
+.card-prognoz{
+  margin-top: 450px;
+}
+
+/* .real-ignition{
+  border:2px solid #444;
+  background: #bd2626;
+  border-radius: 8px;
+} */
+
+.status-row{
+  background: #1e1e1e;
+  border: 2px solid #4444;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px; /* ← это разделяет карточки */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: block;
+  width: 100%;
+}
+.real-ignition{
+  margin: 10px;
+  font-size: 10px;
+}
+
+.badge{
+  background: orange;
+  border: 1px solid black;
+}
+
+.badge--success{
+  font-size: 22px;
+  border-radius: 40px;
+  padding: 5px;
+}

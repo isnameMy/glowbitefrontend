@@ -9,7 +9,7 @@ export default function App() {
     <div className="app">
       {!isHome && (
         <header className="header">
-          <div className="container header-content">
+          <div className="container-header-content">
             <Link to="/" className="logo">
               🔥 <span>Уголь-Монитор</span>
             </Link>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import WarehouseSelect from '../features/stack-search/WarehouseSelect';
 import StackSelect from '../features/stack-search/StackSelect';
 import Card from '../shared/ui/Card';
+import './Dashboard.css'
 
 // 📥 МОК ДАННЫХ от других участников — заменяется на реальный источник
 const MOCK_WAREHOUSES = [
@@ -33,8 +34,9 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 space-y-6">
-      <h1 className="text-2xl font-bold">🔍 Выберите штабель для анализа</h1>
+    <div className="dashbor">
+      <h1 className="font-bold">🔍 Выберите штабель для анализа</h1>
+      <div className='meshdy'>
 
       <Card>
         <WarehouseSelect
@@ -45,18 +47,18 @@ export default function Dashboard() {
       </Card>
 
       {selectedWarehouse && (
-        <Card>
+        <Card >
           <StackSelect
             stacks={stacks}
             value={selectedStack}
             onChange={setSelectedStack}
           />
 
-          <div className="mt-4">
+          <div className='kanaly'>
             <button
               onClick={handleGoToStack}
               disabled={!selectedStack}
-              className="w-full py-3 bg-blue-600 text-white rounded-lg font-medium disabled:opacity-50"
+              className="card"
             >
               Перейти к анализу штабеля {selectedStack}
             </button>
@@ -65,13 +67,14 @@ export default function Dashboard() {
       )}
 
       {/* Подсказка */}
-      <div className="text-sm text-gray-500 bg-gray-100 p-4 rounded-lg">
-        <p>📌 Примеры данных:</p>
+      <div className="primer">
+        <p className='ttxtprim'>📌 Примеры данных:</p>
         <ul className="list-disc pl-5 mt-1">
-          <li><strong>Склад 4, штабель 39</strong> — 286°C (2020-07-02)</li>
-          <li><strong>Склад 6, штабель 1</strong> — 294°C (2020-07-20)</li>
-          <li><strong>Склад 4, штабель 4</strong> — 243°C (2020-08-05)</li>
+          <li className='txtprim'><strong>Склад 4, штабель 39</strong> — 286°C (2020-07-02)</li>
+          <li className='txtprim'><strong>Склад 6, штабель 1</strong> — 294°C (2020-07-20)</li>
+          <li className='txtprim'><strong>Склад 4, штабель 4</strong> — 243°C (2020-08-05)</li>
         </ul>
+      </div>
       </div>
     </div>
   );

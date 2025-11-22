@@ -8,7 +8,7 @@ export default function Home() {
 
       <h1 className="home-title">🔥 Уголь-Монитор</h1>
       <p className="home-description">
-        Прогноз самовозгорания угля при открытом хранении
+        WEB-приложение для прогнозирования самовозгорания угля
       </p>
       <Link
         to="/dashboard"
@@ -18,4 +18,4 @@ export default function Home() {
       </Link>
     </div>
   );
-}
+} 

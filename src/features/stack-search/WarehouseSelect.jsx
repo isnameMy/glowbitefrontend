@@ -11,7 +11,7 @@ export default function WarehouseSelect({ warehouses, value, onChange }) {
         onChange={(e) => onChange(e.target.value)}
         className="warehouse-select__input"
       >
-        <option value="">— Выберите склад —</option>
+        <option value=""><p className='txtrr'>— Выберите склад —</p></option>
         {warehouses.map(wh => (
           <option key={wh.id} value={wh.id}>
             Склад {wh.id} ({wh.stackCount || 0} штабелей)
@@ -19,5 +19,5 @@ export default function WarehouseSelect({ warehouses, value, onChange }) {
         ))}
       </select>
     </div>
-  );
+  ); 
 }

@@ -1,13 +1,15 @@
+import '/Users/tikhon/.vscode/glowbitefrontend/src/features/stack-search/StackSelect.css'
+
 export default function StackSelect({ stacks, value, onChange }) {
   return (
     <div>
-      <label className="block text-sm font-medium mb-2">
+      <label className="pdd">
         Штабель
       </label>
       <select
         value={value || ""}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        className="iputvput"
         disabled={!stacks || stacks.length === 0}
       >
         <option value="">— Выберите штабель —</option>
